@@ -37,6 +37,9 @@ if __name__ == "__main__":
     rate, data = wavfile.read("test_speak.wav")
     data_ch1 = data[:, 0]
     print(data_ch1[:5])
+
+    data_ch1 = data_ch1/max(data_ch1)
+    print(data_ch1[:5])
     print(rate)
 
     y = butter_bandpass_filter(data_ch1, lowcut, highcut, fs, order=6)

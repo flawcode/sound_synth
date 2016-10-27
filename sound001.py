@@ -2,8 +2,10 @@
 
 import struct
 import wave
-wrd = wave.open("answer.wav", "r")
+#wrd = wave.open("answer.wav", "r")
+wrd = wave.open("test_speak.wav", "r")
 S1String = wrd.readframes(1)
+print(S1String)
 S1 = struct.unpack("h", S1String)
 print(S1[0])
 
